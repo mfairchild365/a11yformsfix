@@ -1,0 +1,6 @@
+name: A11y forms fix
+description: Fix accessibility issues with forms
+package: Custom
+type: module
+version: 1.0
+core: 8.x

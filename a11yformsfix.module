@@ -1,0 +1,25 @@
+<?php
+
+
+function a11yformsfix_preprocess_form_element(&$variables) {
+    $remove_from_types = array('webform_radios_other', 'webform_checkboxes_other');
+    if (in_array($variables['element']['#type'], $remove_from_types)) {
+        unset($variables['attributes']['required']);
+        unset($variables['attributes']['aria-required']);
+    }
+}
+
+function a11yformsfix_preprocess_fieldset(&$variables) {
+    $remove_from_types = array('radios', 'checkboxes');
+    if (in_array($variables['element']['#type'], $remove_from_types)) {
+        //var_dump($variables);exit();
+        unset($variables['attributes']['required']);
+        unset($variables['attributes']['aria-required']);
+    }
+}
+
+
+function a11yformsfix_element_info_alter(&$info) {
+    $info['radios']['#process'][0][0] = 'Drupal\a11yformsfix\Element\Radios';
+    $info['checkboxes']['#process'][0][0] = 'Drupal\a11yformsfix\Element\Checkboxes';
+}
