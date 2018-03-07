@@ -3,7 +3,7 @@
 This is a drupal 8.5 (and maybe newer) module to fix form accessibility. It currently does the following:
 
 ## Problem
-When using the 'Radios' and 'Checkboxes' form elements, the `required` property was not being correctly surfaced to assistive technology. This is an issue with drupal core.
+When using the 'Radios' and 'Checkboxes' form elements, the `required` property was not being correctly surfaced to assistive technology. This is an issue with drupal core. Related drupal core issue: https://www.drupal.org/project/drupal/issues/2950999
 
 ### Solution
 
