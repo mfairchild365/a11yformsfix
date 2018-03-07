@@ -1,6 +1,9 @@
 <?php
 
-
+/**
+ * Remove the required attributes from divs that don't support them (w3c validity fix)
+ * @param $variables
+ */
 function a11yformsfix_preprocess_form_element(&$variables) {
     $remove_from_types = array('webform_radios_other', 'webform_checkboxes_other');
     if (in_array($variables['element']['#type'], $remove_from_types)) {
@@ -9,6 +12,10 @@ function a11yformsfix_preprocess_form_element(&$variables) {
     }
 }
 
+/**
+ * Remove the required attributes from divs that don't support them (w3c validity fix)
+ * @param $variables
+ */
 function a11yformsfix_preprocess_fieldset(&$variables) {
     $remove_from_types = array('radios', 'checkboxes');
     if (in_array($variables['element']['#type'], $remove_from_types)) {
@@ -18,7 +25,11 @@ function a11yformsfix_preprocess_fieldset(&$variables) {
     }
 }
 
-
+/**
+ * Override these elements with our own processor to add the correct `required` attributes
+ * 
+ * @param $info
+ */
 function a11yformsfix_element_info_alter(&$info) {
     $info['radios']['#process'][0][0] = 'Drupal\a11yformsfix\Element\Radios';
     $info['checkboxes']['#process'][0][0] = 'Drupal\a11yformsfix\Element\Checkboxes';

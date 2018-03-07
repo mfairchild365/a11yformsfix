@@ -12,6 +12,7 @@ class Radios extends CoreRadios
         //Let core do its thing
         CoreRadios::processRadios($element, $form_state, $complete_form);
 
+        //Now if this is required, make the child radio elements required
         if ($element['#required']) {
             $children = Element::children($element);
 

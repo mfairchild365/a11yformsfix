@@ -15,6 +15,7 @@ class Checkboxes extends CoreCheckboxes
         //Let core do its thing
         CoreCheckboxes::processCheckboxes($element, $form_state, $complete_form);
 
+        //Now if this is required... make the child checkboxes required
         if ($element['#required']) {
             $children = Element::children($element);
 
