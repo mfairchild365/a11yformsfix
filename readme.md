@@ -1,6 +1,6 @@
-#a11yformsfix
+# a11yformsfix
 
-This is a drupal 8 module to fix form accessibility. It currently does the following:
+This is a drupal 8.5 (and maybe newer) module to fix form accessibility. It currently does the following:
 
 ## Problem
 When using the 'Radios' and 'Checkboxes' form elements, the `required` property was not being correctly surfaced to assistive technology. This is an issue with drupal core.
