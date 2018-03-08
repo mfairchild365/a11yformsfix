@@ -7,7 +7,7 @@ When using the 'Radios' and 'Checkboxes' form elements, the `required` property 
 
 ### Solution
 
-This module moves the `required` attributes from the `radios` and `checkboxes` container element (fieldset) to the child radio and checkbox elements. This correctly surfaces the required property to assistive technology.
+This module moves the `required` attributes from the `radios` container element (fieldset) to the child radio elements. This correctly surfaces the required property to assistive technology. HTML5 does not support the `required` attribute on a group of checkboxes, so a JS fix will be required for that (I don't have this implemented).
 
 Before these were being rendered as something like:
 
