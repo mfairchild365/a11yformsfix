@@ -34,12 +34,7 @@ function a11yformsfix_preprocess_fieldset(&$variables) {
  */
 function a11yformsfix_element_info_alter(&$info) {
     $info['radios']['#process'][0][0] = 'Drupal\a11yformsfix\Element\Radios';
-    $info['checkboxes']['#process'][0][0] = 'Drupal\a11yformsfix\Element\Checkboxes';
 
-    $info['webform_checkboxes_other']['#process'][] = array(
-        'Drupal\a11yformsfix\Element\Checkboxes',
-        'preRenderCompositeFormElement'
-    );
     $info['webform_radios_other']['#process'][] = array(
         'Drupal\a11yformsfix\Element\Radios',
         'preRenderCompositeFormElement'
